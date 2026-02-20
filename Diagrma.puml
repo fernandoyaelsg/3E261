@@ -1,0 +1,33 @@
+@startuml
+class RobotAzul
+class RobotRosa
+class RobotNaranja
+class RobotVerde
+class Bomba
+class BombaControlRemoto
+class Explosion
+class MuroSolido
+class MuroDestruible
+class Suelo
+class Velocidad
+class MasBombas
+class MasFuego
+class Escudo
+class Guante
+class Patada
+class VidaExtra
+class PistolaLaser
+class ProyectilLaser
+class Vehiculo
+
+RobotAzul--->Personaje
+RobotRosa--->Personaje
+RobotNaranja--->Personaje
+RobotVerde--->Personaje
+
+RobotAzul*---Bomba
+RobotRosa*---Bomba
+RobotNaranja*---Bomba
+RobotVerde*---Bomba
+@enduml
+
