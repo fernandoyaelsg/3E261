@@ -1,4 +1,6 @@
 @startuml
+class Usuario1
+class Usuario2
 class RobotAzul
 class RobotRosa
 class RobotNaranja
@@ -19,6 +21,11 @@ class VidaExtra
 class PistolaLaser
 class ProyectilLaser
 class Vehiculo
+class Vida
+
+Usuario1--->RobotAzul
+Usuario2--->RobotNaranja
+
 
 RobotAzul--->Personaje
 RobotRosa--->Personaje
@@ -29,5 +36,15 @@ RobotAzul*---Bomba
 RobotRosa*---Bomba
 RobotNaranja*---Bomba
 RobotVerde*---Bomba
+
+RobotAzul *-- "1" Vida
+RobotRosa*--- "1" Vida
+RobotNaranja*---"1" Vida
+RobotVerde*--- "1" Vida
+
+Class RobotAzul{
+    -
+    -
+}
 @enduml
 
