@@ -1,11 +1,14 @@
 @startuml
-class Usuario1
+class Juego
+Class Brazo
+Class Usuario1
 class Usuario2
+class Mapa
 class RobotAzul
 class RobotRosa
 class RobotNaranja
 class RobotVerde
-class Bomba
+class Bombas
 class BombaControlRemoto
 class Explosion
 class MuroSolido
@@ -22,29 +25,74 @@ class PistolaLaser
 class ProyectilLaser
 class Vehiculo
 class Vida
+class Item
+class RobotAzul{
+    - Brazo brazoDerecho
+    - Brazo brazoIzquierdo
+}
+class RobotRosa{
+    - Brazo brazoDerecho
+    - Brazo brazoIzquierdo
+}
+class RobotNaranja{
+    - Brazo brazoDerecho
+    - Brazo brazoIzquierdo
+}
+class RobotVerde{
+    - Brazo brazoDerecho
+    - Brazo brazoIzquierdo
+}
+class RobotAzul{
+    - Bombas bomba[]    
+}
+class RobotRosa{
+    - Bombas bomba[]    
+}
+class RobotNaranja{
+    - Bombas bomba[]    
+}
+class RobotVerde{
+    - Bombas bomba[]    
+}
 
-Usuario1--->RobotAzul
-Usuario2--->RobotNaranja
-
+Juego-->Mapa
+Mapa-->Personaje
+Juego-->Usuario1
+Juego-->Usuario2
+Mapa-->MuroDestruible
+Mapa-->MuroSolido
+Mapa-->Suelo
+Personaje--> Brazo
 
 RobotAzul--->Personaje
 RobotRosa--->Personaje
 RobotNaranja--->Personaje
 RobotVerde--->Personaje
 
-RobotAzul*---Bomba
-RobotRosa*---Bomba
-RobotNaranja*---Bomba
-RobotVerde*---Bomba
+RobotAzul "1" *--- "*" Bombas
+RobotRosa "1" *--- "*" Bombas
+RobotNaranja "1" *--- "*" Bombas
+RobotVerde "1" *--- "*" Bombas
 
-RobotAzul *-- "1" Vida
-RobotRosa*--- "1" Vida
-RobotNaranja*---"1" Vida
-RobotVerde*--- "1" Vida
+Usuario1 *-- "1" Personaje
+Usuario2 *-- "1" Personaje
 
-Class RobotAzul{
-    -
-    -
-}
+Item *-- "1" BombaControlRemoto
+Item *-- "1" Explosion
+Item *-- "1" Velocidad
+Item *-- "1" MasBombas
+Item *-- "1" MasFuego
+Item *-- "1" Escudo
+Item *-- "1" Guante
+Item *-- "1" Patada
+Item *-- "1" VidaExtra
+Item *-- "1" PistolaLaser
+Item *-- "1" ProyectilLaser
+Item *-- "1" Vehiculo
+
+Personaje *-- "1" Vida
+
+MuroDestruible *-- "1" Item
+
 @enduml
 
