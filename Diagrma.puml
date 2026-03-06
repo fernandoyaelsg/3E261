@@ -96,7 +96,7 @@ MuroDestruible *-- "1" Item
 
 class Personaje
 {
-    -Vida Vida1
+    -Vida vida[1]
 }
 class Item{
 -BombaControlRemoto bombacontrolremoto
@@ -114,12 +114,19 @@ class Item{
 }
 
 class Personaje{
-    +tocar(Item)
+    +Tocar(Item)
 }
 class MuroDestruible{
     -Item contenido
     +item : Explocion()
-
+}
+class Mapa{
+    -Personaje peronaje[4] 
+    -Usuario1 usuario1
+    -Usuario2 usuario2
+    -Suelo suelo
+    -MuroDestruible murodestruible
+    -MuroSolido murosolido
 }
 @enduml
 
