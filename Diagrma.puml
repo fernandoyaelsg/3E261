@@ -24,8 +24,8 @@ class VidaExtra
 class PistolaLaser
 class ProyectilLaser
 class Vehiculo
-class Vida
-class Item
+Class Vida
+
 class RobotAzul{
     - Brazo brazoDerecho
     - Brazo brazoIzquierdo
@@ -91,8 +91,35 @@ Item *-- "1" ProyectilLaser
 Item *-- "1" Vehiculo
 
 Personaje *-- "1" Vida
-
+Juego *-- "1" Mapa
 MuroDestruible *-- "1" Item
 
+class Personaje
+{
+    -Vida Vida1
+}
+class Item{
+-BombaControlRemoto bombacontrolremoto
+-Explosion explosion
+-Velocidad velocidad
+-MasBombas masbombas
+-MasFuego masfuego
+-Escudo escudo
+-Guante guante
+-Patada patada
+-VidaExtra vidaextra
+-PistolaLaser pistolalaser
+-ProyectilLaser proyectillaser
+-Vehiculo vehiculo
+}
+
+class Personaje{
+    +tocar(Item)
+}
+class MuroDestruible{
+    -Item contenido
+    +item : Explocion()
+
+}
 @enduml
 
